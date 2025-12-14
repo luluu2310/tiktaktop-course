@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tik Tak Top Course</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img 
+        src="img/logo tiktaktop.png"
+        alt="Logo Tik Tak Top"
+        width="45"
+        height="45"
+        class="rounded-circle me-2"
+      >
+      Tik Tak Top
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#pendaftaran">Pendaftaran Anggota</a></li>
+            <li><a class="dropdown-item" href="#kelas">Informasi Layanan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#kelas">Koleksi</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- JUMBOTRON -->
+<section id="home" class="jumbotron text-center d-flex align-items-center">
+  <div class="container text-white">
+    <h1 class="display-5 fw-bold">Selamat Datang di Tik Tak Top Course</h1>
+    <p class="lead">Lembaga Kursus Komputer Profesional</p>
+
+    <a 
+      href="https://wa.me/6285249952995"
+      target="_blank"
+      class="btn btn-success btn-lg mt-3"
+    >
+      <i class="bi bi-whatsapp"></i> Daftar via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col"><h2>About Us</h2></div>
+    </div>
+    <div class="row justify-content-center text-center">
+      <div class="col-md-8">
+        <p>
+          Tik Tak Top Course menyediakan berbagai program kursus komputer seperti
+          desain grafis, web programming, dan data analysis untuk semua kalangan.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PENDAFTARAN -->
+<section id="pendaftaran" class="py-5 bg-light">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col"><h2>Pendaftaran Anggota</h2></div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form 
+          onsubmit="
+            event.preventDefault();
+            const nama = this.nama.value;
+            const program = this.program.value;
+            const nik = this.nik.value;
+            const alamat = this.alamat.value;
+            const wa = this.wa.value;
+
+            const pesan = `Halo Admin Tik Tak Top,%0A
+Nama: ${nama}%0A
+Program: ${program}%0A
+NIK: ${nik}%0A
+Alamat: ${alamat}%0A
+No WA: ${wa}`;
+
+            window.open('https://wa.me/6285249952995?text=' + pesan, '_blank');
+          "
+        >
+          <div class="mb-3">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" name="nama" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Program Kursus</label>
+            <select class="form-select" name="program">
+              <option>Desain Grafis</option>
+              <option>Web Programming</option>
+              <option>Data Analysis</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">NIK / Nomor Induk Siswa</label>
+            <input type="text" class="form-control" name="nik">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Alamat</label>
+            <textarea class="form-control" rows="2" name="alamat"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Nomor WhatsApp</label>
+            <input type="text" class="form-control" name="wa">
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Kirim via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KELAS -->
+<section id="kelas" class="py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col"><h2>Daftar Kelas</h2></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5>Kelas Dasar Web</h5>
+            <p>HTML, CSS, Bootstrap</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5>Kelas Python Pemula</h5>
+            <p>Dasar Python</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5>Kelas Excel untuk Data</h5>
+            <p>Olah data Excel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-white text-center py-4">
+  <p class="mb-1">📍 Jl. Kaliurang KM 14, Yogyakarta</p>
+  <p class="mb-1">📞 0852-4995-2995 | ✉️ tiktaktop@gmail.com</p>
+
+  <p class="fs-4">
+    <a href="https://instagram.com/USERNAME" target="_blank" class="text-white">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://facebook.com/USERNAME" target="_blank" class="text-white mx-3">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://wa.me/6285249952995" target="_blank" class="text-white">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

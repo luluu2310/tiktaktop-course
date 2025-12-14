@@ -1,0 +1,25 @@
+body {
+  padding-top: 70px;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  min-height: 100vh;
+  background-image: url("img/kursus_BG.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.jumbotron .container {
+  position: relative;
+  z-index: 1;
+}
