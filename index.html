@@ -84,30 +84,17 @@
 <section id="pendaftaran" class="py-5 bg-light">
   <div class="container">
     <div class="row text-center mb-4">
-      <div class="col"><h2>Pendaftaran Anggota</h2></div>
+      <div class="col">
+        <h2>Pendaftaran Anggota</h2>
+      </div>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form 
-          onsubmit="
-            event.preventDefault();
-            const nama = this.nama.value;
-            const program = this.program.value;
-            const nik = this.nik.value;
-            const alamat = this.alamat.value;
-            const wa = this.wa.value;
 
-            const pesan = `Halo Admin Tik Tak Top,%0A
-Nama: ${nama}%0A
-Program: ${program}%0A
-NIK: ${nik}%0A
-Alamat: ${alamat}%0A
-No WA: ${wa}`;
+        <!-- FORM -->
+        <form name="pendaftaran-form">
 
-            window.open('https://wa.me/6285249952995?text=' + pesan, '_blank');
-          "
-        >
           <div class="mb-3">
             <label class="form-label">Nama Lengkap</label>
             <input type="text" class="form-control" name="nama" required>
@@ -115,7 +102,8 @@ No WA: ${wa}`;
 
           <div class="mb-3">
             <label class="form-label">Program Kursus</label>
-            <select class="form-select" name="program">
+            <select class="form-select" name="program" required>
+              <option value="">-- Pilih Program --</option>
               <option>Desain Grafis</option>
               <option>Web Programming</option>
               <option>Data Analysis</option>
@@ -124,23 +112,26 @@ No WA: ${wa}`;
 
           <div class="mb-3">
             <label class="form-label">NIK / Nomor Induk Siswa</label>
-            <input type="text" class="form-control" name="nik">
+            <input type="text" class="form-control" name="nik" required>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Alamat</label>
-            <textarea class="form-control" rows="2" name="alamat"></textarea>
+            <textarea class="form-control" rows="2" name="alamat" required></textarea>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Nomor WhatsApp</label>
-            <input type="text" class="form-control" name="wa">
+            <input type="text" class="form-control" name="whatsapp" required>
           </div>
 
           <button type="submit" class="btn btn-primary w-100">
-            Kirim via WhatsApp
+            Daftar Sekarang
           </button>
+
         </form>
+        <!-- END FORM -->
+
       </div>
     </div>
   </div>
@@ -201,6 +192,27 @@ No WA: ${wa}`;
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzpPCi0rg7XwXoYqSA38zaV58fEiP1KTWHs2-yjFYbT8wx8WYveEXbZcaGTriL0uyse1g/exec'
+  const form = document.forms['pendaftaran-form']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      alert("Pendaftaran berhasil! 🎉");
+      form.reset();
+    })
+    .catch(error => {
+      alert("Gagal mengirim data 😢");
+      console.error(error);
+    })
+  })
+</script>
 
 </body>
 </html>
