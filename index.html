@@ -27,34 +27,67 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
   <div class="container">
+
+    <!-- LOGO + NAMA -->
     <a class="navbar-brand d-flex align-items-center" href="#home">
-  <img 
-    src="img/logo tiktaktop.png"
-    alt="Logo Tik Tak Top"
-    width="40"
-    height="40"
-    class="rounded-circle me-2"
-  >
-  Tik Tak Top
-</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <img 
+        src="img/logo tiktaktop.png"
+        alt="Logo Tik Tak Top"
+        width="40"
+        height="40"
+        class="rounded-circle me-2"
+      >
+      Tik Tak Top
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pendaftaran">Pendaftaran</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kelas">Kelas</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <!-- DROPDOWN LAYANAN -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Layanan
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#pendaftaran">
+                Pendaftaran Anggota
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#kelas">
+                Informasi Layanan
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#kelas">Koleksi</a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
+
 <!-- HOME -->
 <section id="home" class="jumbotron d-flex align-items-center text-center text-white">
   <div class="container">
-    <h1 class="fw-bold">Tik Tak Top Course</h1>
+    <h1 class="fw-bold">Selamat Datang di Tik Tak Top Course</h1>
     <p class="lead">Lembaga Kursus Komputer Profesional</p>
 
     <a href="#pendaftaran" class="btn btn-primary btn-lg mt-3">
